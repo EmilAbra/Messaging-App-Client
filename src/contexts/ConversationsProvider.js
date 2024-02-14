@@ -62,8 +62,8 @@ export function ConversationsProvider({ id, children }) {
 
   const formattedConversations = conversations.map((conversation, index) => {
     const recipients = conversation.recipients.map(recipient => {
-      const contact = contacts.find(contact => {
-        return contact.id === recipient
+      const contact = contacts.find(c => {
+        return c.id === recipient
       })
       const name = (contact && contact.name) || recipient
       return { id: recipient, name }

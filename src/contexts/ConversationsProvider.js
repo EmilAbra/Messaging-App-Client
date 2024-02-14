@@ -70,8 +70,8 @@ export function ConversationsProvider({ id, children }) {
     })
 
     const messages = conversation.messages.map(message => {
-      const contact = contacts.find(contact => {
-        return contact.id === message.sender
+      const contact = contacts.find(c => {
+        return c.id === message.sender
       })
       const name = (contact && contact.name) || message.sender
       const fromMe = id === message.sender
